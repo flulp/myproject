@@ -1,11 +1,12 @@
 package com.company;
+
 import java.util.Scanner;
 
 public class Calculator {
 
-        static Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
 
-        public static void main (String[]args) {
+    public static void main(String[] args) {
         int num1 = getInt();
         int num2 = getInt();
         char operation = getOperation();
@@ -13,7 +14,7 @@ public class Calculator {
         System.out.println("Результат операции: " + result);
     }
 
-        public static int getInt () {
+    public static int getInt() {
         System.out.print("Введите число:");
         int num;
         if (scanner.hasNextInt()) {
@@ -26,7 +27,7 @@ public class Calculator {
         return num;
     }
 
-        public static char getOperation () {
+    public static char getOperation() {
         System.out.println("Введите операцию:");
         System.out.println("1. Сложение");
         System.out.println("2. Вычетание");
@@ -44,30 +45,30 @@ public class Calculator {
         return operation;
     }
 
-        public static int calc ( int num1, int num2, char operation){
-                int result = 0;
-                switch (operation) {
-                    case '1':
-                        result = num1 + num2;
-                        break;
-                    case '2':
-                        result = num1 - num2;
-                        break;
-                    case '3':
-                        result = num1 * num2;
-                        break;
-                    case '4':
-                        result = num1 / num2;
-                        break;
-                    case '5':
-                        break;
-                    default:
-                        System.out.println("Операция не распознана.");
-                        result = calc(num1, num2, getOperation());
-                }
-                return result;
+    public static int calc(int num1, int num2, char operation) {
+        int result = 0;
+        switch (operation) {
+            case '1':
+                result = num1 + num2;
+                break;
+            case '2':
+                result = num1 - num2;
+                break;
+            case '3':
+                result = num1 * num2;
+                break;
+            case '4':
+                result = num1 / num2;
+                break;
+            case '5':
+                break;
+            default:
+                System.out.println("Операция не распознана.");
+                result = calc(num1, num2, getOperation());
+        }
+        return result;
 
     }
-    }
+}
 
 
